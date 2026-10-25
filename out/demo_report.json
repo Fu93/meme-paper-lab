@@ -1,0 +1,182 @@
+{
+  "data_label": "SYNTHETIC (invented random data, not market data; results mean nothing about real markets)",
+  "tokens_in_dataset": 2000,
+  "n_trades": 135,
+  "position_size_usd": 100,
+  "win_rate": 0.17777777777777778,
+  "median_trade_usd": -43.48318648169563,
+  "mean_trade_usd": -20.452972167122784,
+  "total_pnl_usd": -2761.1512425615756,
+  "pnl_ex_top_n_usd": {
+    "5": -5226.288721774817,
+    "10": -5927.330093384507,
+    "20": -6187.740842665099
+  },
+  "top10_share_of_pnl": null,
+  "max_drawdown_usd": 3074.759006875318,
+  "by_entry_age_min": [
+    {
+      "bucket": "5-15",
+      "n": 107,
+      "win_rate": 0.14953271028037382,
+      "median_pnl": -48.83403482946221,
+      "total_pnl": -3081.820860270242,
+      "small_sample": false
+    },
+    {
+      "bucket": "15-60",
+      "n": 24,
+      "win_rate": 0.3333333333333333,
+      "median_pnl": -25.194606457654444,
+      "total_pnl": 510.27116426554136,
+      "small_sample": true
+    },
+    {
+      "bucket": "60-240",
+      "n": 4,
+      "win_rate": 0.0,
+      "median_pnl": -46.706790468362456,
+      "total_pnl": -189.60154655687506,
+      "small_sample": true
+    }
+  ],
+  "by_bundler_pct": [
+    {
+      "bucket": "0-5",
+      "n": 19,
+      "win_rate": 0.21052631578947367,
+      "median_pnl": -55.68079606417463,
+      "total_pnl": -113.09645790251798,
+      "small_sample": true
+    },
+    {
+      "bucket": "5-10",
+      "n": 26,
+      "win_rate": 0.07692307692307693,
+      "median_pnl": -33.40823983519249,
+      "total_pnl": -1094.6553489059372,
+      "small_sample": true
+    },
+    {
+      "bucket": "10-20",
+      "n": 45,
+      "win_rate": 0.2,
+      "median_pnl": -36.30246693126556,
+      "total_pnl": -507.67267364409304,
+      "small_sample": false
+    },
+    {
+      "bucket": "20-40",
+      "n": 45,
+      "win_rate": 0.2,
+      "median_pnl": -43.92928880328949,
+      "total_pnl": -1045.7267621090275,
+      "small_sample": false
+    }
+  ],
+  "by_sniper_pct": [
+    {
+      "bucket": "0-5",
+      "n": 22,
+      "win_rate": 0.3181818181818182,
+      "median_pnl": -41.533239771712964,
+      "total_pnl": -168.05953869557155,
+      "small_sample": true
+    },
+    {
+      "bucket": "5-10",
+      "n": 23,
+      "win_rate": 0.17391304347826086,
+      "median_pnl": -46.428249905143524,
+      "total_pnl": -761.9929856302552,
+      "small_sample": true
+    },
+    {
+      "bucket": "10-20",
+      "n": 52,
+      "win_rate": 0.15384615384615385,
+      "median_pnl": -45.08019419587961,
+      "total_pnl": -1430.3634720855641,
+      "small_sample": false
+    },
+    {
+      "bucket": "20-40",
+      "n": 38,
+      "win_rate": 0.13157894736842105,
+      "median_pnl": -38.00456184075162,
+      "total_pnl": -400.73524615018476,
+      "small_sample": false
+    }
+  ],
+  "exit_reasons": {
+    "stop_loss": 58,
+    "time_stop": 71,
+    "trailing_stop": 6
+  },
+  "funnel": {
+    "no_candle_passed_filters": 1865,
+    "passed_filters": 135,
+    "traded": 135
+  },
+  "blocking_filters": {
+    "holders": 145,
+    "mcap": 1309,
+    "liquidity": 69,
+    "sniper": 481,
+    "dev": 658,
+    "bundler": 485,
+    "dev_flags": 87,
+    "top10": 477,
+    "tax": 197
+  },
+  "warnings": [
+    "PnL excluding the top 5 winners is negative (-5226.29 USD).",
+    "PnL excluding the top 10 winners is negative (-5927.33 USD).",
+    "PnL excluding the top 20 winners is negative (-6187.74 USD)."
+  ],
+  "config": {
+    "filters": {
+      "progress_min_pct": null,
+      "progress_max_pct": null,
+      "age_min_min": 5,
+      "age_max_min": 60,
+      "holders_min": 80,
+      "liquidity_min_usd": 5000,
+      "top10_max_pct": 55,
+      "dev_max_pct": 10,
+      "sniper_max_pct": 30,
+      "insider_max_pct": null,
+      "bundler_max_pct": 30,
+      "tax_max_pct": 8,
+      "mcap_min_usd": 7000,
+      "mcap_max_usd": 40000,
+      "exclude_dev_flags": [
+        "honeypot"
+      ]
+    },
+    "exits": {
+      "take_profits": [
+        {
+          "at_gain_pct": 100,
+          "sell_fraction": 0.5
+        }
+      ],
+      "stop_loss_pct": 50,
+      "trailing": {
+        "activate_gain_pct": 200,
+        "drawdown_pct": 35
+      },
+      "time_stop_min": 240
+    },
+    "execution": {
+      "position_size_usd": 100,
+      "fee_pct": 1.0,
+      "slippage_multiplier": 1.0,
+      "latency_candles": 1
+    },
+    "portfolio": {
+      "max_concurrent": 10,
+      "daily_loss_stop_usd": 500
+    }
+  }
+}

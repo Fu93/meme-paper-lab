@@ -1,0 +1,12 @@
+# UNREALISTIC on purpose: zero fees, zero slippage, no filters. Ladder: sell half at +100%,
+# trailing 35% drawdown after +200%, -50% stop. Use with SYNTHETIC data to see how a few
+# outliers can dominate a total. Real friction would only make this worse.
+filters:
+  age_min_min: 5
+exits:
+  take_profits: [{at_gain_pct: 100, sell_fraction: 0.5}]
+  stop_loss_pct: 50
+  trailing: {activate_gain_pct: 200, drawdown_pct: 35}
+  time_stop_min: 240
+execution: {position_size_usd: 100, fee_pct: 0, slippage_multiplier: 0, latency_candles: 0}
+portfolio: {}

@@ -1,0 +1,34 @@
+# Illustrative config. Values are NOT recommendations and are not tuned on any data.
+# Omit a filter (or set null) to disable it. Missing data on a configured filter => fail closed.
+filters:
+  progress_min_pct: null     # bonding-curve progress (needs graduation_mcap_usd in data)
+  progress_max_pct: null
+  age_min_min: 5             # token age at entry decision, minutes
+  age_max_min: 60
+  holders_min: 80
+  liquidity_min_usd: 5000
+  top10_max_pct: 55
+  dev_max_pct: 10
+  sniper_max_pct: 30
+  insider_max_pct: null
+  bundler_max_pct: 30
+  tax_max_pct: 8             # max(buy tax, sell tax)
+  mcap_min_usd: 7000         # entry only once market cap is inside this range
+  mcap_max_usd: 40000
+  exclude_dev_flags: [honeypot]
+exits:
+  take_profits:              # sell_fraction is of the ORIGINAL position
+    - {at_gain_pct: 100, sell_fraction: 0.5}
+  stop_loss_pct: 50          # sells everything remaining
+  trailing:                  # after +200%, sell the rest on a 35% drop from the peak
+    activate_gain_pct: 200
+    drawdown_pct: 35
+  time_stop_min: 240         # minutes after fill
+execution:
+  position_size_usd: 100
+  fee_pct: 1.0               # per side
+  slippage_multiplier: 1.0   # 0 = off; impact = mult * size / (liquidity/2)
+  latency_candles: 1         # decision -> fill delay
+portfolio:
+  max_concurrent: 10
+  daily_loss_stop_usd: 500   # no new entries on a UTC day once realised loss <= -500

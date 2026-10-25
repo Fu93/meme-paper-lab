@@ -1,0 +1,18 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+*.db
+*.sqlite*
+# generated outputs are not committed, except the small synthetic demo reports below
+out/*
+!out/demo_report.md
+!out/demo_report.json
+!out/tail_demo.md
+!out/tail_demo.json
